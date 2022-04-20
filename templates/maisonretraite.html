@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <form method="POST">
+<h1> Saisir une maison de retraite </h1>
+        <br/>
+        {{ form.hidden_tag() }}
+
+        {{ form.nom_maison_retraite.label(
+        class="form-label")}}
+
+        {{ form.nom_maison_retraite(
+        class="form-control") }}
+
+        <br/>
+        {{ form.adresse_etablissement.label(
+        class="form-label")}}
+
+        {{ form.adresse_etablissement(
+        class="form-control") }}
+
+        <br/>
+        {{ form.telephone_etablissement.label(
+        class="form-label")}}
+
+        {{ form.telephone_etablissement(
+        class="form-control") }}
+
+        <br/>
+        {{ form.nom_cadre_sante.label(
+        class="form-label")}}
+
+        {{ form.nom_cadre_sante(
+        class="form-control") }}
+
+        <br/>
+        {{ form.telephone_cadre_sante.label(
+        class="form-label")}}
+
+        {{ form.telephone_cadre_sante(
+        class="form-control") }}
+
+        <br/>
+        {{ form.adresse_mail_cadre_sante.label(
+        class="form-label")}}
+
+        {{ form.adresse_mail_cadre_sante(
+        class="form-control") }}
+
+        <br/>
+        {{ form.nom_directeur.label(
+        class="form-label")}}
+
+        {{ form.nom_directeur(
+        class="form-control") }}
+
+        <br/>
+        {{ form.telephone_directeur.label(
+        class="form-label")}}
+
+        {{ form.telephone_directeur(
+        class="form-control") }}
+
+        <br/>
+        {{ form.adresse_mail_directeur.label(
+        class="form-label")}}
+
+        {{ form.adresse_mail_directeur(
+        class="form-control") }}
+
+        <br/>
+        {{ form.submit(
+        class="btn btn-secondary") }}
+    </form>
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ nom_maison_retraite }} {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{% endblock %}

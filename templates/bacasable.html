@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>maison de retraite</th>
+        <th>adresse</th>
+        <th>test</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for etablissement in maison_retraite %}
+        <tr>
+          <td>{{ etablissement.id_maison_retraite }}</td>
+          <td>{{ etablissement.nom_maison_retraite }}</td>
+          <td>{{ etablissement.adresse_maison_retraite }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table id="data3 class="table table-striped">
+    <thead>
+      <tr>
+        <th>nom</th>
+        <th>prénom</th>
+        <th>téléphone</th>
+        <th>email</th>
+        <th>test</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for type in fiche_patient %}
+        <tr>
+          <td>{{ type.nom_patient }}</td>
+          <td>{{ type.prenom_patient }}</td>
+          <td>{{ type.telephone_patient }}</td>
+          <td>{{ type.email_patient }}</td>
+          <td>{{ test }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}

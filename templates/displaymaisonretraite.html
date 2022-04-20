@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Etablissement</th>
+        <th>Adresse</th>
+        <th>Telephone Et </th>
+        <th>Nom CDS</th>
+        <th>Telephone CDS</th>
+        <th>Email CDS</th>
+        <th>Nom direction</th>
+        <th>Telephone direction</th>
+        <th>Email direction</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for count in range(lataille) %}
+        <tr>
+          <td>{{ noms_maisons_retraite[count] }}</td>
+          <td>{{ adresses_maisons_retraite[count] }}</td>
+          <td>{{ telephones_maisons_retraite[count] }}</td>
+          <td>{{ noms_cadres_sante[count] }}</td>
+          <td>{{ telephones_cadres_sante[count] }}</td>
+          <td>{{ emails_cadres_sante[count] }}</td>
+          <td>{{ noms_directeurs[count] }}</td>
+          <td>{{ telephones_directeurs[count] }}</td>
+          <td>{{ emails_directeurs[count] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}

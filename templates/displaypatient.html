@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Etablissement</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for count in range(lataille) %}
+        <tr>
+          <td>{{nom_patient[count]}}</td>
+          <td>{{prenom_patient[count]}}</td>
+          <td>{{nom_maison_retraite[count]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}
